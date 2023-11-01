@@ -177,7 +177,6 @@ const order = [
 	'clear',
 
 	// font
-	'color',
 	'font',
 	'font-family',
 	'font-size',
@@ -231,7 +230,8 @@ const order = [
 	'tab-size',
 	'hyphens',
 
-	// background
+	// appearance
+	'color',
 	'background',
 	'background-attachment',
 	'background-blend-mode',
