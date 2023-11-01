@@ -1,5 +1,10 @@
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "cSpell.words": ["biomejs", "stylelint"],
   "editor.codeActionsOnSave": {
-    "quickfix.biome": true
+    "quickfix.biome": true,
+    "source.organizeImports.biome": true
   }
 }
