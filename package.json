@@ -22,7 +22,7 @@
     "stylelint": "^15.11.0"
   },
   "peerDependencies": {
-    "stylelint": "^15.11.0"
+    "stylelint": ">=15"
   },
   "dependencies": {
     "stylelint-order": "^6.0.3"
