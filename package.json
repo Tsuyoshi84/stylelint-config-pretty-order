@@ -13,5 +13,11 @@
   ],
   "repository": "git@github.com:Tsuyoshi84/stylelint-config-pretty-order.git",
   "author": "Tsuyoshi Yamaguchi",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "stylelint": "^15.11.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^15.11.0"
+  }
 }
