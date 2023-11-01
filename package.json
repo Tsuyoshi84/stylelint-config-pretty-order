@@ -1,0 +1,29 @@
+{
+  "name": "stylelint-config-pretty-order",
+  "version": "0.0.1",
+  "description": "Prettify CSS property order",
+  "main": "index.js",
+  "scripts": {
+    "lint": "biome check ./src",
+    "format": "biome format --write ./src",
+    "format:check": "biome format ./src"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-order"
+  ],
+  "repository": "git@github.com:Tsuyoshi84/stylelint-config-pretty-order.git",
+  "author": "Tsuyoshi Yamaguchi",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.3.3",
+    "stylelint": "^15.11.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^15.11.0"
+  },
+  "dependencies": {
+    "stylelint-order": "^6.0.3"
+  }
+}
