@@ -1,8 +1,10 @@
 .test {
   all: initial;
 
+  /* position */
   position: absolute;
   z-index: 1;
+  isolation: auto;
   top: 0;
   right: 0;
   bottom: 0;
@@ -15,11 +17,19 @@
   inset-inline-start: 0;
   inset-inline-end: 0;
 
-  display: block;
+  /* flow control */
+  float: none;
+  clear: none;
+
+  /* display */
+  display: inline;
   opacity: 0;
   visibility: visible;
+  content-visibility: visible;
+  backface-visibility: visible;
   content: '';
 
+  /* flex */
   flex: 1 1 auto;
   flex-basis: auto;
   flex-direction: row;
@@ -27,17 +37,25 @@
   flex-grow: 0;
   flex-shrink: 1;
   flex-wrap: nowrap;
+  order: 0;
+
+  /* grid */
   grid-area: auto;
+  grid-template: auto;
   grid-template-areas: 'a b c' 'd e f' 'g h i';
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-auto-flow: column;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
   grid-column: auto;
   grid-column-start: auto;
   grid-column-end: auto;
   grid-row: auto;
   grid-row-start: auto;
   grid-row-end: auto;
+
+  /* place */
   align-content: flex-start;
   align-items: stretch;
   align-self: auto;
@@ -47,11 +65,78 @@
   justify-content: flex-start;
   justify-items: auto;
   justify-self: auto;
-  order: 0;
   gap: 0;
-  column-gap: 0;
   row-gap: 0;
+  vertical-align: auto;
 
+  /* overflow */
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  overflow-inline: visible;
+  overflow-block: visible;
+  overflow-anchor: auto;
+  overflow-clip-margin: auto;
+
+  /* scroll */
+  scroll-behavior: auto;
+  scroll-margin: 0;
+  scroll-margin-top: 0;
+  scroll-margin-right: 0;
+  scroll-margin-bottom: 0;
+  scroll-margin-left: 0;
+  scroll-margin-block: 0;
+  scroll-margin-block-start: 0;
+  scroll-margin-block-end: 0;
+  scroll-margin-inline: 0;
+  scroll-margin-inline-start: 0;
+  scroll-margin-inline-end: 0;
+  scroll-padding: 0;
+  scroll-padding-top: 0;
+  scroll-padding-right: 0;
+  scroll-padding-bottom: 0;
+  scroll-padding-left: 0;
+  scroll-padding-block: 0;
+  scroll-padding-block-start: 0;
+  scroll-padding-block-end: 0;
+  scroll-padding-inline: 0;
+  scroll-padding-inline-start: 0;
+  scroll-padding-inline-end: 0;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+  scroll-snap-type: none;
+  overscroll-behavior: auto;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: auto;
+  overscroll-behavior-inline: auto;
+  overscroll-behavior-block: auto;
+
+  /* table */
+  table-layout: auto;
+  caption-side: top;
+  empty-cells: show;
+  border-collapse: collapse;
+
+  /* column */
+  columns: unset;
+  column-count: auto;
+  column-fill: balance;
+  column-gap: normal;
+  column-rule: medium none currentColor;
+  column-rule-color: currentColor;
+  column-rule-style: none;
+  column-rule-width: none;
+  column-span: 1;
+  column-width: 0;
+  orphans: 1;
+  widows: 1;
+
+  /* container */
+  container: unset;
+  container-name: test;
+  container-type: size;
+
+  /* size */
   width: 0;
   inline-size: auto;
   min-inline-size: 0;
@@ -63,6 +148,15 @@
   aspect-ratio: 1;
   box-sizing: content-box;
 
+  /* contain */
+  contain: none;
+  contain-intrinsic-size: auto;
+  contain-intrinsic-width: auto;
+  contain-intrinsic-height: auto;
+  contain-intrinsic-inline-size: auto;
+  contain-intrinsic-block-size: auto;
+
+  /* margin */
   margin: 0;
   margin-top: 0;
   margin-right: 0;
@@ -75,6 +169,7 @@
   margin-inline-start: 0;
   margin-inline-end: 0;
 
+  /* padding */
   padding: 0;
   padding-top: 0;
   padding-right: 0;
@@ -87,52 +182,82 @@
   padding-inline-start: 0;
   padding-inline-end: 0;
 
+  /* border */
   border: 1px solid #000;
   border-width: 1px;
   border-style: solid;
+  border-color: #000;
   border-top: 1px solid #000;
   border-top-width: 1px;
   border-top-style: solid;
+  border-top-color: #000;
   border-right: 1px solid #000;
   border-right-width: 1px;
+  border-right-color: #000;
   border-bottom: 1px solid #000;
   border-bottom-width: 1px;
+  border-bottom-color: #000;
   border-left: 1px solid #000;
   border-left-width: 1px;
+  border-left-color: #000;
   border-block: 1px solid #000;
   border-block-width: 1px;
   border-block-style: solid;
+  border-block-color: #000;
   border-block-start: 1px solid #000;
   border-block-start-width: 1px;
   border-block-start-style: solid;
+  border-block-start-color: #000;
   border-block-end: 1px solid #000;
   border-block-end-width: 1px;
   border-block-end-style: solid;
+  border-block-end-color: #000;
   border-inline: 1px solid #000;
   border-inline-width: 1px;
   border-inline-style: solid;
+  border-inline-color: #000;
   border-inline-start: 1px solid #000;
   border-inline-start-width: 1px;
   border-inline-start-style: solid;
+  border-inline-start-color: #000;
   border-inline-end: 1px solid #000;
   border-inline-end-width: 1px;
   border-inline-end-style: solid;
-  border-collapse: collapse;
+  border-inline-end-color: #000;
+  border-radius: 1px;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-start-start-radius: 1px;
+  border-start-end-radius: 1px;
+  border-end-end-radius: 1px;
+  border-end-start-radius: 1px;
+  border-image: none;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
   border-spacing: 0;
   box-shadow: none;
 
+  /* outline */
   outline: 1px solid #000;
   outline-color: #000;
   outline-offset: 0;
   outline-style: solid;
   outline-width: 1px;
 
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  float: none;
-  clear: none;
+  /* scrollbar */
+  scrollbar-color: #000;
+  scrollbar-gutter: auto;
+  scrollbar-width: auto;
 
+  /* cursor */
+  cursor: pointer;
+
+  /* font  */
   font:
     1em/1.5 Arial,
     sans-serif;
@@ -157,28 +282,49 @@
   font-display: auto;
   letter-spacing: 0;
   line-height: 0;
+
+  /* text */
   text-align: 0;
+  text-align-last: auto;
+  text-combine-upright: none;
   text-decoration: none;
   text-decoration-color: #000;
   text-decoration-line: none;
   text-decoration-style: none;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
   text-indent: 0;
   text-justify: 0;
   text-shadow: none;
   text-rendering: auto;
   text-size-adjust: auto;
   text-transform: none;
+  text-underline-offset: auto;
   text-underline-position: auto;
   text-overflow: clip;
   white-space: normal;
+  white-space-collapse: collapse;
   word-spacing: normal;
   word-wrap: normal;
   word-break: break-all;
   overflow-wrap: normal;
+  initial-letter: normal;
+  initial-letter-align: auto;
   tab-size: 0;
   hyphens: auto;
+  hyphenate-character: auto;
+  hyphenate-limit-chars: unset;
+  quotes: none;
+  line-break: auto;
+  ruby-align: auto;
+  ruby-position: after;
+  writing-mode: horizontal-tb;
 
+  /* appearance */
+  color-scheme: normal;
   color: #000;
+  accent-color: #000;
+  caret-color: #000;
   background: none;
   background-attachment: scroll;
   background-blend-mode: normal;
@@ -189,9 +335,22 @@
   background-position: 0 0;
   background-position-x: 0;
   background-position-y: 0;
-  background-size: auto;
   background-repeat: repeat;
+  background-size: auto;
+  mix-blend-mode: color;
 
+  /* image */
+  image-orientation: none;
+  image-rendering: auto;
+  image-resolution: 1dppx;
+  object-fit: none;
+  object-position: 0 0;
+
+  /* filter */
+  filter: none;
+  backdrop-filter: none;
+
+  /* mask / clip */
   mask: none;
   mask-clip: border-box;
   mask-composite: add;
@@ -202,7 +361,18 @@
   mask-repeat: repeat;
   mask-size: auto;
   mask-type: luminance;
+  clip: auto;
+  clip-path: none;
 
+  /* shape */
+  shape-image-threshold: 0;
+  shape-margin: 0;
+  shape-outside: none;
+
+  /* svg */
+  paint-order: fill;
+
+  /* transform */
   translate: 0;
   rotate: 0deg;
   scale: 1;
@@ -210,7 +380,10 @@
   transform-origin: 50% 50%;
   transform-style: flat;
   transform-box: border-box;
+  perspective: none;
+  perspective-origin: top;
 
+  /* animation / transition */
   animation: none;
   animation-delay: 0;
   animation-direction: normal;
@@ -219,22 +392,52 @@
   animation-iteration-count: 1;
   animation-name: none;
   animation-play-state: running;
+  animation-timing-function: ease;
+  timeline-scope: none;
   transition: all 0.3s ease;
   transition-delay: 0s;
   transition-duration: 0.3s;
   transition-property: all;
   transition-timing-function: ease;
-  animation-timing-function: ease;
+  view-transition-name: 0;
+  view-timeline: none;
+  view-timeline-name: none;
+  view-timeline-axis: 0;
+  view-timeline-inset: 0;
+  scroll-timeline: auto;
+  scroll-timeline-name: test;
+  scroll-timeline-axis: inline;
 
+  /* offset */
+  offset: unset;
+  offset-anchor: auto;
+  offset-distance: 0;
+  offset-path: none;
+  offset-position: 0;
+  offset-rotate: auto;
+
+  /* page */
+  page: auto;
+  page-break-before: auto;
+  page-break-inside: auto;
+  page-break-after: auto;
+
+  /** action */
+  user-select: auto;
+  pointer-events: none;
+  touch-action: auto;
+
+  /* others */
   appearance: none;
-  backdrop-filter: none;
-  backface-visibility: visible;
-  caption-side: top;
-  caret-color: #000;
-  clip: auto;
-  cursor: pointer;
-  empty-cells: show;
-
+  box-decoration-break: clone;
+  counter-increment: none;
+  counter-reset: none;
+  counter-set: none;
+  forced-color-adjust: auto;
+  list-style: circle;
+  list-style-image: none;
+  list-style-position: inside;
+  list-style-type: circle;
   mask-border: none;
   mask-border-mode: alpha;
   mask-border-outset: 0;
@@ -242,23 +445,12 @@
   mask-border-slice: 0;
   mask-border-source: none;
   mask-border-width: 0;
-  object-fit: none;
-  object-position: 0;
-  pointer-events: none;
+  math-depth: 0;
+  math-shift: normal;
+  math-style: normal;
+  print-color-adjust: economy;
   resize: none;
-  scroll-behavior: auto;
-  scroll-margin: 0;
-  scroll-margin-bottom: 0;
-  scroll-margin-left: 0;
-  scroll-margin-right: 0;
-  scroll-margin-top: 0;
-  scroll-padding: 0;
-  scroll-padding-bottom: 0;
-  scroll-padding-left: 0;
-  scroll-padding-right: 0;
-  scroll-padding-top: 0;
-  scroll-snap-align: none;
-  scroll-snap-stop: normal;
-  scroll-snap-type: none;
-  table-layout: auto;
+  unicode-bidi: normal;
+  will-change: auto;
+  zoom: 1;
 }

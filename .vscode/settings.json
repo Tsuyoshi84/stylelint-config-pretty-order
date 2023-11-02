@@ -2,6 +2,11 @@
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "[css]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "never"
+    }
+  },
   "cSpell.words": ["biomejs", "stylelint"],
   "editor.codeActionsOnSave": {
     "quickfix.biome": true,

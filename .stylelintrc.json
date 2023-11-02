@@ -1,5 +1,7 @@
 {
+  "extends": ["./index.js"],
   "rules": {
-    "declaration-block-no-duplicate-properties": true
+    "declaration-block-no-duplicate-properties": true,
+    "comment-whitespace-inside": "always"
   }
 }
