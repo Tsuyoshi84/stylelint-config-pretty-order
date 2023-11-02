@@ -27,3 +27,4 @@ jobs:
       - run: bun lint
       - run: bun format:check
       - run: bun stylelint
+      - run: bun run test
