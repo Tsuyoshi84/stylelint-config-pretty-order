@@ -401,7 +401,7 @@ function others() {
  */
 function top_right_bottom_left(name) {
 	const prefix = name !== undefined ? `${name}-` : ''
-	const properties = ['top', 'right', 'bottom', 'left'].map((dir) => `${prefix}${dir}`)
+	const properties = ['top', 'right', 'bottom', 'left'].map(after(prefix))
 
 	return [name ?? [], properties].flat()
 }
@@ -414,7 +414,7 @@ function top_right_bottom_left(name) {
  * @returns {string[]} Array of property names
  */
 function x_y(name) {
-	return [`${name}-x`, `${name}-y`]
+	return ['-x', '-y'].map(after(name))
 }
 
 /**
@@ -425,7 +425,7 @@ function x_y(name) {
  * @returns {string[]} Array of property names
  */
 function inline_block(name) {
-	return [`${name}-inline`, `${name}-block`]
+	return ['-inline', '-block'].map(after(name))
 }
 
 /**
@@ -473,7 +473,7 @@ function all_sizes(name) {
  * @returns {string[]} Array of property names
  */
 function start_end(name) {
-	return ['', '-start', '-end'].map((suffix) => `${name}${suffix}`)
+	return ['', '-start', '-end'].map(after(name))
 }
 
 /**
@@ -484,7 +484,7 @@ function start_end(name) {
  * @returns {string[]} Array of property names
  */
 function min_max(name) {
-	return ['', 'min-', 'max-'].map((prefix) => `${prefix}${name}`)
+	return ['', 'min-', 'max-'].map(before(name))
 }
 
 /**
@@ -498,8 +498,7 @@ function min_max(name) {
  */
 function border(name) {
 	const infix = name !== undefined ? `-${name}` : ''
-
-	return [`border${infix}`, `border${infix}-width`, `border${infix}-style`, `border${infix}-color`]
+	return ['', '-width', '-style', '-color'].map(after(infix)).map(after('border'))
 }
 
 /**
@@ -511,5 +510,24 @@ function border(name) {
  * @returns {string[]} Array of property names
  */
 function content_items_self(name) {
-	return ['-content', '-items', '-self'].map((suffix) => `${name}${suffix}`)
+	return ['-content', '-items', '-self'].map(after(name))
+}
+
+/**
+ * Returns a function that concatenates the given prefix with the provided name.
+ *
+ * @param {string} name - The name to concatenate with the prefix.
+ * @returns {(suffix: string) => string} A function that takes a prefix and returns the concatenated string.
+ */
+function before(name) {
+	return (prefix) => `${prefix}${name}`
+}
+
+/**
+ * Returns a function that returns a string with the given suffix.
+ * @param {string} name - The name to concatenate with the suffix.
+ * @returns {(suffix: string) => string} A function that takes a suffix and returns the concatenated string.
+ */
+function after(name) {
+	return (suffix) => `${name}${suffix}`
 }
