@@ -1,5 +1,7 @@
 # stylelint-config-pretty-order
 
+[![test](https://github.com/Tsuyoshi84/stylelint-config-pretty-order/actions/workflows/test.yml/badge.svg)](https://github.com/Tsuyoshi84/stylelint-config-pretty-order/actions/workflows/test.yml)
+
 Prettify CSS property order with [stylelint-order](https://github.com/hudochenkov/stylelint-order).
 
 ## Installation
@@ -11,7 +13,7 @@ npm i -D stylelint-config-pretty-order
 ```
 
 ```bash
-yarn add --add stylelint-config-pretty-order
+yarn add --dev stylelint-config-pretty-order
 ```
 
 ```bash
