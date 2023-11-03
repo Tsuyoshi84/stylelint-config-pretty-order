@@ -31,19 +31,19 @@ function x_y_inline_block(name) {
 
 /**
  * Returns an array of property names with the following suffixes:
- * - block
- * - block-start
- * - block-end
  * - inline
  * - inline-start
  * - inline-end
+ * - block
+ * - block-start
+ * - block-end
  * @param {string | undefined} [name] Base property name
  * @returns {string[]} Array of property names
  */
-function block_inline_with_start_end(name) {
+function inline_block_with_start_end(name) {
 	const prefix = name !== undefined ? `${name}-` : ''
 
-	return [start_end(`${prefix}block`), start_end(`${prefix}inline`)].flat()
+	return [start_end(`${prefix}inline`), start_end(`${prefix}block`)].flat()
 }
 
 /**
@@ -161,9 +161,9 @@ const order = [
 	// scroll
 	'scroll-behavior',
 	top_right_bottom_left('scroll-margin'),
-	block_inline_with_start_end('scroll-margin'),
+	inline_block_with_start_end('scroll-margin'),
 	top_right_bottom_left('scroll-padding'),
-	block_inline_with_start_end('scroll-padding'),
+	inline_block_with_start_end('scroll-padding'),
 	'scroll-snap-align',
 	'scroll-snap-stop',
 	'scroll-snap-type',
@@ -212,11 +212,11 @@ const order = [
 
 	// margin
 	top_right_bottom_left('margin'),
-	block_inline_with_start_end('margin'),
+	inline_block_with_start_end('margin'),
 
 	// padding
 	top_right_bottom_left('padding'),
-	block_inline_with_start_end('padding'),
+	inline_block_with_start_end('padding'),
 
 	// border
 	border(),
@@ -224,12 +224,12 @@ const order = [
 	border('right'),
 	border('bottom'),
 	border('left'),
-	border('block'),
-	border('block-start'),
-	border('block-end'),
 	border('inline'),
 	border('inline-start'),
 	border('inline-end'),
+	border('block'),
+	border('block-start'),
+	border('block-end'),
 	'border-radius',
 	'border-top-left-radius',
 	'border-top-right-radius',
