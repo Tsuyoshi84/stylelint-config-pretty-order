@@ -23,7 +23,8 @@
   clear: none;
 
   /* === BOX MODEL === */
-  /** box model */
+  /** box */
+  display: grid;
   box-sizing: content-box;
 
   /* size */
@@ -126,8 +127,6 @@
   border-image-width: 1;
   border-spacing: 0;
   box-shadow: none;
-
-  display: grid;
 
   /* === GRID and FLEX === */
   /* grid */
