@@ -174,9 +174,7 @@ const order = [
 	start_end('grid-row'),
 
 	// place
-	content_items_self('align'),
-	content_items_self('place'),
-	content_items_self('justify'),
+	['align', 'place', 'justify'].flatMap(content_items_self),
 	'gap',
 	'column-gap',
 	'row-gap',
@@ -222,10 +220,7 @@ const order = [
 	'container-type',
 
 	// size
-	min_max('width'),
-	min_max('inline-size'),
-	min_max('height'),
-	min_max('block-size'),
+	['width', 'height', 'inline-size', 'block-size'].flatMap(min_max),
 	'aspect-ratio',
 	'box-sizing',
 
