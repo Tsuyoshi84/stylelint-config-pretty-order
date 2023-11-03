@@ -1,8 +1,13 @@
 // @ts-check
 
 /**
- * @param {string | undefined} [name]
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - top
+ * - right
+ * - bottom
+ * - left
+ * @param {string | undefined} [name] Base property name
+ * @returns {string[]} Array of property names
  */
 function top_right_bottom_left(name) {
 	const prefix = name !== undefined ? `${name}-` : ''
@@ -12,16 +17,28 @@ function top_right_bottom_left(name) {
 }
 
 /**
- * @param {string} name
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - x
+ * - y
+ * - inline
+ * - block
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
  */
 function x_y_inline_block(name) {
 	return ['', '-x', '-y', '-inline', '-block'].map((suffix) => `${name}${suffix}`)
 }
 
 /**
- * @param {string | undefined} [name]
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - block
+ * - block-start
+ * - block-end
+ * - inline
+ * - inline-start
+ * - inline-end
+ * @param {string | undefined} [name] Base property name
+ * @returns {string[]} Array of property names
  */
 function block_inline_with_start_end(name) {
 	const prefix = name !== undefined ? `${name}-` : ''
@@ -30,24 +47,35 @@ function block_inline_with_start_end(name) {
 }
 
 /**
- * @param {string} name
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - start
+ * - end
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
  */
 function start_end(name) {
 	return ['', '-start', '-end'].map((suffix) => `${name}${suffix}`)
 }
 
 /**
- * @param {string} name
- * @returns {string[]}
+ * Returns an array of property names with the following prefixes:
+ * - min
+ * - max
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
  */
 function min_max(name) {
 	return ['', 'min-', 'max-'].map((prefix) => `${prefix}${name}`)
 }
 
 /**
- * @param {string | undefined} [name]
- * @returns {string[]}
+ * Returns an array of property names with the following formats:
+ * - border-{name}
+ * - border-{name}-width
+ * - border-{name}-style
+ * - border-{name}-color
+ * @param {string | undefined} [name] Base property name
+ * @returns {string[]} Array of property names
  */
 function border(name) {
 	const infix = name !== undefined ? `-${name}` : ''
@@ -56,9 +84,12 @@ function border(name) {
 }
 
 /**
- *
- * @param {string} name
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - content
+ * - items
+ * - self
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
  */
 function content_items_self(name) {
 	return ['-content', '-items', '-self'].map((suffix) => `${name}${suffix}`)
