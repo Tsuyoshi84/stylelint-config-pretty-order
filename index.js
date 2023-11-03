@@ -20,30 +20,59 @@ function top_right_bottom_left(name) {
  * Returns an array of property names with the following suffixes:
  * - x
  * - y
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
+ */
+function x_y(name) {
+	return [`${name}-x`, `${name}-y`]
+}
+
+/**
+ * Returns an array of property names with the following suffixes:
+ * - inline
+ * - block
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
+ */
+function inline_block(name) {
+	return [`${name}-inline`, `${name}-block`]
+}
+
+/**
+ * Returns an array of property names with the following suffixes:
+ * - x
+ * - y
  * - inline
  * - block
  * @param {string} name Base property name
  * @returns {string[]} Array of property names
  */
 function x_y_inline_block(name) {
-	return ['', '-x', '-y', '-inline', '-block'].map((suffix) => `${name}${suffix}`)
+	return [name, ...x_y(name), ...inline_block(name)]
 }
 
 /**
  * Returns an array of property names with the following suffixes:
- * - block
- * - block-start
- * - block-end
  * - inline
  * - inline-start
  * - inline-end
- * @param {string | undefined} [name] Base property name
+ * - block
+ * - block-start
+ * - block-end
+ * @param {string} name Base property name
  * @returns {string[]} Array of property names
  */
-function block_inline_with_start_end(name) {
-	const prefix = name !== undefined ? `${name}-` : ''
+function inline_block_with_start_end(name) {
+	return inline_block(name).flatMap(start_end)
+}
 
-	return [start_end(`${prefix}block`), start_end(`${prefix}inline`)].flat()
+/**
+ * Returns an array of all sizes for the given property name.
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
+ */
+function all_sizes(name) {
+	return [...top_right_bottom_left(name), ...inline_block_with_start_end(name)]
 }
 
 /**
@@ -105,8 +134,7 @@ const order = [
 	'isolation',
 	top_right_bottom_left(),
 	'inset',
-	start_end('inset-block'),
-	start_end('inset-inline'),
+	inline_block('inset').flatMap(start_end),
 
 	// flow control
 	'float',
@@ -145,9 +173,7 @@ const order = [
 	start_end('grid-row'),
 
 	// place
-	content_items_self('align'),
-	content_items_self('place'),
-	content_items_self('justify'),
+	['align', 'place', 'justify'].flatMap(content_items_self),
 	'gap',
 	'column-gap',
 	'row-gap',
@@ -160,10 +186,8 @@ const order = [
 
 	// scroll
 	'scroll-behavior',
-	top_right_bottom_left('scroll-margin'),
-	block_inline_with_start_end('scroll-margin'),
-	top_right_bottom_left('scroll-padding'),
-	block_inline_with_start_end('scroll-padding'),
+	all_sizes('scroll-margin'),
+	all_sizes('scroll-padding'),
 	'scroll-snap-align',
 	'scroll-snap-stop',
 	'scroll-snap-type',
@@ -195,10 +219,7 @@ const order = [
 	'container-type',
 
 	// size
-	min_max('width'),
-	min_max('inline-size'),
-	min_max('height'),
-	min_max('block-size'),
+	['width', 'height', 'inline-size', 'block-size'].flatMap(min_max),
 	'aspect-ratio',
 	'box-sizing',
 
@@ -211,25 +232,15 @@ const order = [
 	'contain-intrinsic-block-size',
 
 	// margin
-	top_right_bottom_left('margin'),
-	block_inline_with_start_end('margin'),
+	all_sizes('margin'),
 
 	// padding
-	top_right_bottom_left('padding'),
-	block_inline_with_start_end('padding'),
+	all_sizes('padding'),
 
 	// border
 	border(),
-	border('top'),
-	border('right'),
-	border('bottom'),
-	border('left'),
-	border('block'),
-	border('block-start'),
-	border('block-end'),
-	border('inline'),
-	border('inline-start'),
-	border('inline-end'),
+	top_right_bottom_left().flatMap(border),
+	['inline', 'block'].flatMap(start_end).flatMap(border),
 	'border-radius',
 	'border-top-left-radius',
 	'border-top-right-radius',
