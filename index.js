@@ -1,56 +1,98 @@
 // @ts-check
 
 /**
- * @param {string | undefined} [name]
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - top
+ * - right
+ * - bottom
+ * - left
+ * @param {string | undefined} [name] Base property name
+ * @returns {string[]} Array of property names
  */
 function top_right_bottom_left(name) {
 	const prefix = name !== undefined ? `${name}-` : ''
+	const properties = ['top', 'right', 'bottom', 'left'].map((dir) => `${prefix}${dir}`)
 
-	return [name ?? [], `${prefix}top`, `${prefix}right`, `${prefix}bottom`, `${prefix}left`].flat()
+	return [name ?? [], properties].flat()
 }
 
 /**
- * @param {string | undefined} [name]
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - x
+ * - y
+ * - inline
+ * - block
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
  */
-function block_inline(name) {
+function x_y_inline_block(name) {
+	return ['', '-x', '-y', '-inline', '-block'].map((suffix) => `${name}${suffix}`)
+}
+
+/**
+ * Returns an array of property names with the following suffixes:
+ * - block
+ * - block-start
+ * - block-end
+ * - inline
+ * - inline-start
+ * - inline-end
+ * @param {string | undefined} [name] Base property name
+ * @returns {string[]} Array of property names
+ */
+function block_inline_with_start_end(name) {
 	const prefix = name !== undefined ? `${name}-` : ''
 
-	return [
-		`${prefix}block`,
-		`${prefix}block-start`,
-		`${prefix}block-end`,
-		`${prefix}inline`,
-		`${prefix}inline-start`,
-		`${prefix}inline-end`,
-	]
+	return [start_end(`${prefix}block`), start_end(`${prefix}inline`)].flat()
 }
 
 /**
- * @param {string} name
- * @returns {string[]}
+ * Returns an array of property names with the following suffixes:
+ * - start
+ * - end
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
  */
 function start_end(name) {
-	return [`${name}`, `${name}-start`, `${name}-end`]
+	return ['', '-start', '-end'].map((suffix) => `${name}${suffix}`)
 }
 
 /**
- * @param {string} name
- * @returns {string[]}
+ * Returns an array of property names with the following prefixes:
+ * - min
+ * - max
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
  */
-function size_with_min_max(name) {
-	return [name, `min-${name}`, `max-${name}`]
+function min_max(name) {
+	return ['', 'min-', 'max-'].map((prefix) => `${prefix}${name}`)
 }
 
 /**
- * @param {string | undefined} [name]
- * @returns {string[]}
+ * Returns an array of property names with the following formats:
+ * - border-{name}
+ * - border-{name}-width
+ * - border-{name}-style
+ * - border-{name}-color
+ * @param {string | undefined} [name] Base property name
+ * @returns {string[]} Array of property names
  */
 function border(name) {
 	const infix = name !== undefined ? `-${name}` : ''
 
 	return [`border${infix}`, `border${infix}-width`, `border${infix}-style`, `border${infix}-color`]
+}
+
+/**
+ * Returns an array of property names with the following suffixes:
+ * - content
+ * - items
+ * - self
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
+ */
+function content_items_self(name) {
+	return ['-content', '-items', '-self'].map((suffix) => `${name}${suffix}`)
 }
 
 /** @type string[] */
@@ -99,51 +141,33 @@ const order = [
 	'grid-auto-columns',
 	'grid-auto-rows',
 	'grid-gap',
-	'grid-column',
-	'grid-column-start',
-	'grid-column-end',
-	'grid-row',
-	'grid-row-start',
-	'grid-row-end',
+	start_end('grid-column'),
+	start_end('grid-row'),
 
 	// place
-	'align-content',
-	'align-items',
-	'align-self',
-	'place-content',
-	'place-items',
-	'place-self',
-	'justify-content',
-	'justify-items',
-	'justify-self',
+	content_items_self('align'),
+	content_items_self('place'),
+	content_items_self('justify'),
 	'gap',
 	'column-gap',
 	'row-gap',
 	'vertical-align',
 
 	// overflow
-	'overflow',
-	'overflow-x',
-	'overflow-y',
-	'overflow-inline',
-	'overflow-block',
+	x_y_inline_block('overflow'),
 	'overflow-anchor',
 	'overflow-clip-margin',
 
 	// scroll
 	'scroll-behavior',
 	top_right_bottom_left('scroll-margin'),
-	block_inline('scroll-margin'),
+	block_inline_with_start_end('scroll-margin'),
 	top_right_bottom_left('scroll-padding'),
-	block_inline('scroll-padding'),
+	block_inline_with_start_end('scroll-padding'),
 	'scroll-snap-align',
 	'scroll-snap-stop',
 	'scroll-snap-type',
-	'overscroll-behavior',
-	'overscroll-behavior-x',
-	'overscroll-behavior-y',
-	'overscroll-behavior-inline',
-	'overscroll-behavior-block',
+	x_y_inline_block('overscroll-behavior'),
 
 	// table
 	'table-layout',
@@ -171,10 +195,10 @@ const order = [
 	'container-type',
 
 	// size
-	size_with_min_max('width'),
-	size_with_min_max('inline-size'),
-	size_with_min_max('height'),
-	size_with_min_max('block-size'),
+	min_max('width'),
+	min_max('inline-size'),
+	min_max('height'),
+	min_max('block-size'),
 	'aspect-ratio',
 	'box-sizing',
 
@@ -188,11 +212,11 @@ const order = [
 
 	// margin
 	top_right_bottom_left('margin'),
-	block_inline('margin'),
+	block_inline_with_start_end('margin'),
 
 	// padding
 	top_right_bottom_left('padding'),
-	block_inline('padding'),
+	block_inline_with_start_end('padding'),
 
 	// border
 	border(),
