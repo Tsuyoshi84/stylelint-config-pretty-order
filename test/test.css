@@ -1,6 +1,7 @@
 .test {
   all: initial;
 
+  /* === POSITIONING === */
   /* position */
   position: absolute;
   z-index: 1;
@@ -21,120 +22,9 @@
   float: none;
   clear: none;
 
-  /* display */
-  display: inline;
-  opacity: 0;
-  visibility: visible;
-  content-visibility: visible;
-  backface-visibility: visible;
-  content: '';
-
-  /* flex */
-  flex: 1 1 auto;
-  flex-basis: auto;
-  flex-direction: row;
-  flex-flow: row nowrap;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-wrap: nowrap;
-  order: 0;
-
-  /* grid */
-  grid-area: auto;
-  grid-template: auto;
-  grid-template-areas: 'a b c' 'd e f' 'g h i';
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-auto-flow: column;
-  grid-auto-columns: auto;
-  grid-auto-rows: auto;
-  grid-column: auto;
-  grid-column-start: auto;
-  grid-column-end: auto;
-  grid-row: auto;
-  grid-row-start: auto;
-  grid-row-end: auto;
-
-  /* place */
-  align-content: flex-start;
-  align-items: stretch;
-  align-self: auto;
-  place-content: normal;
-  place-items: normal;
-  place-self: auto;
-  justify-content: flex-start;
-  justify-items: auto;
-  justify-self: auto;
-  gap: 0;
-  row-gap: 0;
-  vertical-align: auto;
-
-  /* overflow */
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  overflow-inline: visible;
-  overflow-block: visible;
-  overflow-anchor: auto;
-  overflow-clip-margin: auto;
-
-  /* scroll */
-  scroll-behavior: auto;
-  scroll-margin: 0;
-  scroll-margin-top: 0;
-  scroll-margin-right: 0;
-  scroll-margin-bottom: 0;
-  scroll-margin-left: 0;
-  scroll-margin-inline: 0;
-  scroll-margin-inline-start: 0;
-  scroll-margin-inline-end: 0;
-  scroll-margin-block: 0;
-  scroll-margin-block-start: 0;
-  scroll-margin-block-end: 0;
-  scroll-padding: 0;
-  scroll-padding-top: 0;
-  scroll-padding-right: 0;
-  scroll-padding-bottom: 0;
-  scroll-padding-left: 0;
-  scroll-padding-inline: 0;
-  scroll-padding-inline-start: 0;
-  scroll-padding-inline-end: 0;
-  scroll-padding-block: 0;
-  scroll-padding-block-start: 0;
-  scroll-padding-block-end: 0;
-  scroll-snap-align: none;
-  scroll-snap-stop: normal;
-  scroll-snap-type: none;
-  overscroll-behavior: auto;
-  overscroll-behavior-x: auto;
-  overscroll-behavior-y: auto;
-  overscroll-behavior-inline: auto;
-  overscroll-behavior-block: auto;
-
-  /* table */
-  table-layout: auto;
-  caption-side: top;
-  empty-cells: show;
-  border-collapse: collapse;
-
-  /* column */
-  columns: unset;
-  column-count: auto;
-  column-fill: balance;
-  column-gap: normal;
-  column-rule: medium none currentColor;
-  column-rule-color: currentColor;
-  column-rule-style: none;
-  column-rule-width: none;
-  column-span: 1;
-  column-width: 0;
-  orphans: 1;
-  widows: 1;
-
-  /* container */
-  container: unset;
-  container-name: test;
-  container-type: size;
+  /* === BOX MODEL === */
+  /** box model */
+  box-sizing: content-box;
 
   /* size */
   width: 0;
@@ -150,15 +40,6 @@
   min-block-size: 0;
   max-block-size: none;
   aspect-ratio: 1;
-  box-sizing: content-box;
-
-  /* contain */
-  contain: none;
-  contain-intrinsic-size: auto;
-  contain-intrinsic-width: auto;
-  contain-intrinsic-height: auto;
-  contain-intrinsic-inline-size: auto;
-  contain-intrinsic-block-size: auto;
 
   /* margin */
   margin: 0;
@@ -246,21 +127,127 @@
   border-spacing: 0;
   box-shadow: none;
 
-  /* outline */
-  outline: 1px solid #000;
-  outline-color: #000;
-  outline-offset: 0;
-  outline-style: solid;
-  outline-width: 1px;
+  display: grid;
 
-  /* scrollbar */
-  scrollbar-color: #000;
-  scrollbar-gutter: auto;
-  scrollbar-width: auto;
+  /* === GRID and FLEX === */
+  /* grid */
+  grid-area: auto;
+  grid-template: auto;
+  grid-template-areas: 'a b c' 'd e f' 'g h i';
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  grid-column: auto;
+  grid-column-start: auto;
+  grid-column-end: auto;
+  grid-row: auto;
+  grid-row-start: auto;
+  grid-row-end: auto;
 
-  /* cursor */
-  cursor: pointer;
+  /* flex */
+  flex: 1 1 auto;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-wrap: nowrap;
+  order: 0;
 
+  /* place */
+  align-content: flex-start;
+  align-items: stretch;
+  align-self: auto;
+  place-content: normal;
+  place-items: normal;
+  place-self: auto;
+  justify-content: flex-start;
+  justify-items: auto;
+  justify-self: auto;
+  gap: 0;
+  row-gap: 0;
+  vertical-align: auto;
+
+  /* === OVERFLOW and SCROLLING === */
+  /* overflow */
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  overflow-inline: visible;
+  overflow-block: visible;
+  overflow-anchor: auto;
+  overflow-clip-margin: auto;
+
+  /* scroll */
+  scroll-behavior: auto;
+  scroll-margin: 0;
+  scroll-margin-top: 0;
+  scroll-margin-right: 0;
+  scroll-margin-bottom: 0;
+  scroll-margin-left: 0;
+  scroll-margin-inline: 0;
+  scroll-margin-inline-start: 0;
+  scroll-margin-inline-end: 0;
+  scroll-margin-block: 0;
+  scroll-margin-block-start: 0;
+  scroll-margin-block-end: 0;
+  scroll-padding: 0;
+  scroll-padding-top: 0;
+  scroll-padding-right: 0;
+  scroll-padding-bottom: 0;
+  scroll-padding-left: 0;
+  scroll-padding-inline: 0;
+  scroll-padding-inline-start: 0;
+  scroll-padding-inline-end: 0;
+  scroll-padding-block: 0;
+  scroll-padding-block-start: 0;
+  scroll-padding-block-end: 0;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+  scroll-snap-type: none;
+  overscroll-behavior: auto;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: auto;
+  overscroll-behavior-inline: auto;
+  overscroll-behavior-block: auto;
+
+  /* === LAYOUT === */
+  /* table */
+  table-layout: auto;
+  caption-side: top;
+  empty-cells: show;
+  border-collapse: collapse;
+
+  /* column */
+  columns: unset;
+  column-count: auto;
+  column-fill: balance;
+  column-gap: normal;
+  column-rule: medium none currentColor;
+  column-rule-color: currentColor;
+  column-rule-style: none;
+  column-rule-width: none;
+  column-span: 1;
+  column-width: 0;
+  orphans: 1;
+  widows: 1;
+
+  /* container */
+  container: unset;
+  container-name: test;
+  container-type: size;
+
+  /* contain */
+  contain: none;
+  contain-intrinsic-size: auto;
+  contain-intrinsic-width: auto;
+  contain-intrinsic-height: auto;
+  contain-intrinsic-inline-size: auto;
+  contain-intrinsic-block-size: auto;
+
+  /* === TYPOGRAPHY === */
   /* font  */
   font:
     1em/1.5 Arial,
@@ -324,11 +311,20 @@
   ruby-position: after;
   writing-mode: horizontal-tb;
 
-  /* appearance */
+  /* === APPEARANCE === */
+  /* visibility */
+  opacity: 0;
+  visibility: visible;
+  content-visibility: visible;
+  backface-visibility: visible;
+
+  /* colors */
   color-scheme: normal;
   color: #000;
   accent-color: #000;
   caret-color: #000;
+
+  /* background */
   background: none;
   background-attachment: scroll;
   background-blend-mode: normal;
@@ -349,6 +345,18 @@
   image-resolution: 1dppx;
   object-fit: none;
   object-position: 0 0;
+
+  /* outline */
+  outline: 1px solid #000;
+  outline-color: #000;
+  outline-offset: 0;
+  outline-style: solid;
+  outline-width: 1px;
+
+  /* scrollbar */
+  scrollbar-color: #000;
+  scrollbar-gutter: auto;
+  scrollbar-width: auto;
 
   /* filter */
   filter: none;
@@ -376,6 +384,7 @@
   /* svg */
   paint-order: fill;
 
+  /* === INTERACTION === */
   /* transform */
   translate: 0;
   rotate: 0deg;
@@ -387,7 +396,7 @@
   perspective: none;
   perspective-origin: top;
 
-  /* animation / transition */
+  /* animation */
   animation: none;
   animation-delay: 0;
   animation-direction: normal;
@@ -398,6 +407,8 @@
   animation-play-state: running;
   animation-timing-function: ease;
   timeline-scope: none;
+
+  /* transition */
   transition: all 0.3s ease;
   transition-delay: 0s;
   transition-duration: 0.3s;
@@ -408,6 +419,8 @@
   view-timeline-name: none;
   view-timeline-axis: 0;
   view-timeline-inset: 0;
+
+  /* scroll timeline */
   scroll-timeline: auto;
   scroll-timeline-name: test;
   scroll-timeline-axis: inline;
@@ -420,23 +433,30 @@
   offset-position: 0;
   offset-rotate: auto;
 
-  /* page */
+  /* === OTHERS === */
+  /* action */
+  cursor: pointer;
+  user-select: auto;
+  pointer-events: none;
+  touch-action: auto;
+  resize: none;
+
+  /* content */
+  content: '';
+  counter-increment: none;
+  counter-reset: none;
+  counter-set: none;
+
+  /* page & print */
   page: auto;
   page-break-before: auto;
   page-break-inside: auto;
   page-break-after: auto;
+  print-color-adjust: economy;
 
-  /** action */
-  user-select: auto;
-  pointer-events: none;
-  touch-action: auto;
-
-  /* others */
+  /* === MISCELLANEOUS === */
   appearance: none;
   box-decoration-break: clone;
-  counter-increment: none;
-  counter-reset: none;
-  counter-set: none;
   forced-color-adjust: auto;
   list-style: circle;
   list-style-image: none;
@@ -452,8 +472,6 @@
   math-depth: 0;
   math-shift: normal;
   math-style: normal;
-  print-color-adjust: economy;
-  resize: none;
   unicode-bidi: normal;
   will-change: auto;
   zoom: 1;
