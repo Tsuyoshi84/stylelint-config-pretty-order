@@ -134,8 +134,7 @@ const order = [
 	'isolation',
 	top_right_bottom_left(),
 	'inset',
-	start_end('inset-inline'),
-	start_end('inset-block'),
+	inline_block('inset').flatMap(start_end),
 
 	// flow control
 	'float',
@@ -241,8 +240,7 @@ const order = [
 	// border
 	border(),
 	top_right_bottom_left().flatMap(border),
-	start_end('inline').flatMap(border),
-	start_end('block').flatMap(border),
+	['inline', 'block'].flatMap(start_end).flatMap(border),
 	'border-radius',
 	'border-top-left-radius',
 	'border-top-right-radius',
