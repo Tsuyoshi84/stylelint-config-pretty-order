@@ -20,13 +20,35 @@ function top_right_bottom_left(name) {
  * Returns an array of property names with the following suffixes:
  * - x
  * - y
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
+ */
+function x_y(name) {
+	return [`${name}-x`, `${name}-y`]
+}
+
+/**
+ * Returns an array of property names with the following suffixes:
+ * - inline
+ * - block
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
+ */
+function inline_block(name) {
+	return [`${name}-inline`, `${name}-block`]
+}
+
+/**
+ * Returns an array of property names with the following suffixes:
+ * - x
+ * - y
  * - inline
  * - block
  * @param {string} name Base property name
  * @returns {string[]} Array of property names
  */
 function x_y_inline_block(name) {
-	return ['', '-x', '-y', '-inline', '-block'].map((suffix) => `${name}${suffix}`)
+	return [name, ...x_y(name), ...inline_block(name)]
 }
 
 /**
@@ -37,13 +59,11 @@ function x_y_inline_block(name) {
  * - block
  * - block-start
  * - block-end
- * @param {string | undefined} [name] Base property name
+ * @param {string} name Base property name
  * @returns {string[]} Array of property names
  */
 function inline_block_with_start_end(name) {
-	const prefix = name !== undefined ? `${name}-` : ''
-
-	return [start_end(`${prefix}inline`), start_end(`${prefix}block`)].flat()
+	return inline_block(name).flatMap(start_end)
 }
 
 /**
@@ -52,7 +72,7 @@ function inline_block_with_start_end(name) {
  * @returns {string[]} Array of property names
  */
 function all_sizes(name) {
-	return [top_right_bottom_left(name), inline_block_with_start_end(name)].flat()
+	return [...top_right_bottom_left(name), ...inline_block_with_start_end(name)]
 }
 
 /**
