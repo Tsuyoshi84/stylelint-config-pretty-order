@@ -5,15 +5,9 @@
  * @returns {string[]}
  */
 function top_right_bottom_left(name) {
-	const _prefix = name !== undefined ? `${name}-` : ''
+	const prefix = name !== undefined ? `${name}-` : ''
 
-	return [
-		name ?? [],
-		`${_prefix}top`,
-		`${_prefix}right`,
-		`${_prefix}bottom`,
-		`${_prefix}left`,
-	].flat()
+	return [name ?? [], `${prefix}top`, `${prefix}right`, `${prefix}bottom`, `${prefix}left`].flat()
 }
 
 /**
@@ -21,15 +15,15 @@ function top_right_bottom_left(name) {
  * @returns {string[]}
  */
 function block_inline(name) {
-	const _prefix = name !== undefined ? `${name}-` : ''
+	const prefix = name !== undefined ? `${name}-` : ''
 
 	return [
-		`${_prefix}block`,
-		`${_prefix}block-start`,
-		`${_prefix}block-end`,
-		`${_prefix}inline`,
-		`${_prefix}inline-start`,
-		`${_prefix}inline-end`,
+		`${prefix}block`,
+		`${prefix}block-start`,
+		`${prefix}block-end`,
+		`${prefix}inline`,
+		`${prefix}inline-start`,
+		`${prefix}inline-end`,
 	]
 }
 
@@ -54,36 +48,37 @@ function size_with_min_max(name) {
  * @returns {string[]}
  */
 function border(name) {
-	const _infix = name !== undefined ? `-${name}` : ''
+	const infix = name !== undefined ? `-${name}` : ''
 
-	return [
-		`border${_infix}`,
-		`border${_infix}-width`,
-		`border${_infix}-style`,
-		`border${_infix}-color`,
-		`border${_infix}-radius`,
-	]
+	return [`border${infix}`, `border${infix}-width`, `border${infix}-style`, `border${infix}-color`]
 }
 
+/** @type string[] */
 const order = [
-	'composes',
 	'all',
 
-	// positioning
+	// position
 	'position',
 	'z-index',
+	'isolation',
 	top_right_bottom_left(),
 	'inset',
 	start_end('inset-block'),
 	start_end('inset-inline'),
 
+	// flow control
+	'float',
+	'clear',
+
 	// display
 	'display',
 	'opacity',
 	'visibility',
+	'content-visibility',
+	'backface-visibility',
 	'content',
 
-	// flex / grid
+	// flex
 	'flex',
 	'flex-basis',
 	'flex-direction',
@@ -91,8 +86,12 @@ const order = [
 	'flex-grow',
 	'flex-shrink',
 	'flex-wrap',
+	'order',
+
+	// grid
 	'grid',
 	'grid-area',
+	'grid-template',
 	'grid-template-areas',
 	'grid-template-columns',
 	'grid-template-rows',
@@ -106,6 +105,8 @@ const order = [
 	'grid-row',
 	'grid-row-start',
 	'grid-row-end',
+
+	// place
 	'align-content',
 	'align-items',
 	'align-self',
@@ -115,10 +116,59 @@ const order = [
 	'justify-content',
 	'justify-items',
 	'justify-self',
-	'order',
 	'gap',
 	'column-gap',
 	'row-gap',
+	'vertical-align',
+
+	// overflow
+	'overflow',
+	'overflow-x',
+	'overflow-y',
+	'overflow-inline',
+	'overflow-block',
+	'overflow-anchor',
+	'overflow-clip-margin',
+
+	// scroll
+	'scroll-behavior',
+	top_right_bottom_left('scroll-margin'),
+	block_inline('scroll-margin'),
+	top_right_bottom_left('scroll-padding'),
+	block_inline('scroll-padding'),
+	'scroll-snap-align',
+	'scroll-snap-stop',
+	'scroll-snap-type',
+	'overscroll-behavior',
+	'overscroll-behavior-x',
+	'overscroll-behavior-y',
+	'overscroll-behavior-inline',
+	'overscroll-behavior-block',
+
+	// table
+	'table-layout',
+	'caption-side',
+	'empty-cells',
+	'border-collapse',
+
+	// column
+	'columns',
+	'column-count',
+	'column-fill',
+	'column-gap',
+	'column-rule',
+	'column-rule-color',
+	'column-rule-style',
+	'column-rule-width',
+	'column-span',
+	'column-width',
+	'orphans',
+	'widows',
+
+	// container
+	'container',
+	'container-name',
+	'container-type',
 
 	// size
 	size_with_min_max('width'),
@@ -127,6 +177,14 @@ const order = [
 	size_with_min_max('block-size'),
 	'aspect-ratio',
 	'box-sizing',
+
+	// contain
+	'contain',
+	'contain-intrinsic-size',
+	'contain-intrinsic-width',
+	'contain-intrinsic-height',
+	'contain-intrinsic-inline-size',
+	'contain-intrinsic-block-size',
 
 	// margin
 	top_right_bottom_left('margin'),
@@ -148,17 +206,21 @@ const order = [
 	border('inline'),
 	border('inline-start'),
 	border('inline-end'),
+	'border-radius',
+	'border-top-left-radius',
+	'border-top-right-radius',
+	'border-bottom-right-radius',
+	'border-bottom-left-radius',
 	'border-start-start-radius',
 	'border-start-end-radius',
-	'border-end-start-radius',
 	'border-end-end-radius',
+	'border-end-start-radius',
 	'border-image',
 	'border-image-outset',
 	'border-image-repeat',
 	'border-image-slice',
 	'border-image-source',
 	'border-image-width',
-	'border-collapse',
 	'border-spacing',
 	'box-shadow',
 
@@ -169,12 +231,13 @@ const order = [
 	'outline-style',
 	'outline-width',
 
-	// flow control
-	'overflow',
-	'overflow-x',
-	'overflow-y',
-	'float',
-	'clear',
+	// scrollbar
+	'scrollbar-color',
+	'scrollbar-gutter',
+	'scrollbar-width',
+
+	// cursor
+	'cursor',
 
 	// font
 	'font',
@@ -201,12 +264,17 @@ const order = [
 	'font-display',
 	'letter-spacing',
 	'line-height',
+
+	// text
 	'text-align',
 	'text-align-last',
+	'text-combine-upright',
 	'text-decoration',
 	'text-decoration-color',
 	'text-decoration-line',
 	'text-decoration-style',
+	'text-decoration-skip-ink',
+	'text-decoration-thickness',
 	'text-indent',
 	'text-justify',
 	'text-shadow',
@@ -214,24 +282,37 @@ const order = [
 	'text-rendering',
 	'text-size-adjust',
 	'text-transform',
+	'text-underline-offset',
 	'text-underline-position',
 	'text-emphasis',
 	'text-emphasis-color',
 	'text-emphasis-position',
 	'text-emphasis-style',
-	'text-combine-upright',
 	'text-orientation',
 	'text-overflow',
 	'white-space',
+	'white-space-collapse',
 	'word-spacing',
 	'word-wrap',
 	'word-break',
 	'overflow-wrap',
+	'initial-letter',
+	'initial-letter-align',
 	'tab-size',
 	'hyphens',
+	'hyphenate-character',
+	'hyphenate-limit-chars',
+	'quotes',
+	'line-break',
+	'ruby-align',
+	'ruby-position',
+	'writing-mode',
 
 	// appearance
+	'color-scheme',
 	'color',
+	'accent-color',
+	'caret-color',
 	'background',
 	'background-attachment',
 	'background-blend-mode',
@@ -242,10 +323,22 @@ const order = [
 	'background-position',
 	'background-position-x',
 	'background-position-y',
-	'background-size',
 	'background-repeat',
+	'background-size',
+	'mix-blend-mode',
 
-	// mask
+	// image
+	'image-orientation',
+	'image-rendering',
+	'image-resolution',
+	'object-fit',
+	'object-position',
+
+	// filter
+	'filter',
+	'backdrop-filter',
+
+	// mask / clip
 	'mask',
 	'mask-clip',
 	'mask-composite',
@@ -256,6 +349,16 @@ const order = [
 	'mask-repeat',
 	'mask-size',
 	'mask-type',
+	'clip',
+	'clip-path',
+
+	// shape
+	'shape-image-threshold',
+	'shape-margin',
+	'shape-outside',
+
+	// svg
+	'paint-order',
 
 	// transform
 	'translate',
@@ -265,6 +368,8 @@ const order = [
 	'transform-origin',
 	'transform-style',
 	'transform-box',
+	'perspective',
+	'perspective-origin',
 
 	// animation / transition
 	'animation',
@@ -275,11 +380,40 @@ const order = [
 	'animation-iteration-count',
 	'animation-name',
 	'animation-play-state',
+	'animation-timing-function',
+	'timeline-scope',
 	'transition',
 	'transition-delay',
 	'transition-duration',
 	'transition-property',
 	'transition-timing-function',
+	'view-transition-name',
+	'view-timeline',
+	'view-timeline-name',
+	'view-timeline-axis',
+	'view-timeline-inset',
+	'scroll-timeline',
+	'scroll-timeline-name',
+	'scroll-timeline-axis',
+
+	// offset
+	'offset',
+	'offset-anchor',
+	'offset-distance',
+	'offset-path',
+	'offset-position',
+	'offset-rotate',
+
+	// page
+	'page',
+	'page-break-before',
+	'page-break-inside',
+	'page-break-after',
+
+	// action
+	'user-select',
+	'pointer-events',
+	'touch-action',
 ].flat()
 
 module.exports = {
