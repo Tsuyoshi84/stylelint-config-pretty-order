@@ -105,8 +105,8 @@ const order = [
 	'isolation',
 	top_right_bottom_left(),
 	'inset',
-	start_end('inset-block'),
 	start_end('inset-inline'),
+	start_end('inset-block'),
 
 	// flow control
 	'float',
