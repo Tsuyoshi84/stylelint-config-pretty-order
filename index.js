@@ -47,6 +47,15 @@ function inline_block_with_start_end(name) {
 }
 
 /**
+ * Returns an array of all sizes for the given property name.
+ * @param {string} name Base property name
+ * @returns {string[]} Array of property names
+ */
+function all_sizes(name) {
+	return [top_right_bottom_left(name), inline_block_with_start_end(name)].flat()
+}
+
+/**
  * Returns an array of property names with the following suffixes:
  * - start
  * - end
@@ -160,10 +169,8 @@ const order = [
 
 	// scroll
 	'scroll-behavior',
-	top_right_bottom_left('scroll-margin'),
-	inline_block_with_start_end('scroll-margin'),
-	top_right_bottom_left('scroll-padding'),
-	inline_block_with_start_end('scroll-padding'),
+	all_sizes('scroll-margin'),
+	all_sizes('scroll-padding'),
 	'scroll-snap-align',
 	'scroll-snap-stop',
 	'scroll-snap-type',
@@ -211,12 +218,10 @@ const order = [
 	'contain-intrinsic-block-size',
 
 	// margin
-	top_right_bottom_left('margin'),
-	inline_block_with_start_end('margin'),
+	all_sizes('margin'),
 
 	// padding
-	top_right_bottom_left('padding'),
-	inline_block_with_start_end('padding'),
+	all_sizes('padding'),
 
 	// border
 	border(),
