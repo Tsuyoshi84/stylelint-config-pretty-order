@@ -18,7 +18,8 @@ const order = [
 	'clear',
 
 	// === BOX MODEL ===
-	// box model
+	// box
+	'display',
 	'box-sizing',
 
 	// size
@@ -54,9 +55,6 @@ const order = [
 	'box-shadow',
 
 	// === GRID and FLEX ===
-	// display
-	'display',
-
 	// grid
 	'grid',
 	'grid-area',
