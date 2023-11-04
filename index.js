@@ -346,6 +346,10 @@ function interaction() {
 		'animation-iteration-count',
 		'animation-name',
 		'animation-play-state',
+		'animation-range',
+		'animation-range-start',
+		'animation-range-end',
+		'animation-timeline',
 		'animation-timing-function',
 		'timeline-scope',
 
@@ -355,7 +359,11 @@ function interaction() {
 		'transition-duration',
 		'transition-property',
 		'transition-timing-function',
+
+		// view transition
 		'view-transition-name',
+
+		// timeline
 		'view-timeline',
 		'view-timeline-name',
 		'view-timeline-axis',
