@@ -292,12 +292,16 @@
   text-underline-offset: auto;
   text-underline-position: auto;
   text-overflow: clip;
+
+  /* white space & word wrapping */
   white-space: normal;
   white-space-collapse: collapse;
   word-spacing: normal;
   word-wrap: normal;
   word-break: break-all;
   overflow-wrap: normal;
+
+  /* letter appearance */
   initial-letter: normal;
   initial-letter-align: auto;
   tab-size: 0;

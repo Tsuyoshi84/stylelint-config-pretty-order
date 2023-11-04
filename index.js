@@ -224,12 +224,16 @@ function typography() {
 		'text-emphasis-style',
 		'text-orientation',
 		'text-overflow',
+
+		// white space & word wrapping
 		'white-space',
 		'white-space-collapse',
 		'word-spacing',
 		'word-wrap',
 		'word-break',
 		'overflow-wrap',
+
+		// letter appearance
 		'initial-letter',
 		'initial-letter-align',
 		'tab-size',
@@ -257,6 +261,8 @@ function appearance() {
 		'color',
 		'accent-color',
 		'caret-color',
+
+		// background
 		'background',
 		'background-attachment',
 		'background-blend-mode',
@@ -331,7 +337,7 @@ function interaction() {
 		'perspective',
 		'perspective-origin',
 
-		// animation / transition
+		// animation
 		'animation',
 		'animation-delay',
 		'animation-direction',
@@ -342,6 +348,8 @@ function interaction() {
 		'animation-play-state',
 		'animation-timing-function',
 		'timeline-scope',
+
+		// transition
 		'transition',
 		'transition-delay',
 		'transition-duration',
