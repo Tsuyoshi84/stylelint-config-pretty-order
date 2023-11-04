@@ -19,8 +19,8 @@ This config sorts properties based on the following group:
 5. **Layout** - e.g., `table-layout`, `columns`, `container`, `contain`
 6. **Typography** - e.g., `font`, `text-align`, `white-space`
 7. **Appearance** - e.g., `opacity`, `color`, `background`, `outline`, `filter`
-8. **Interaction** - e.g., `translate`, `animation`, `transition`
-9. **Others** - e.g., `cursor`, `content`
+8. **Transform & Animation** - e.g., `translate`, `animation`, `transition`
+9. **Misc** - e.g., `cursor`, `content`
 
 To check the complete property order, see [test.css](/test/test.css).
 

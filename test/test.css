@@ -1,7 +1,7 @@
 .test {
   all: initial;
 
-  /* === POSITIONING === */
+  /* === Position === */
   /* position */
   position: absolute;
   z-index: 1;
@@ -22,7 +22,7 @@
   float: none;
   clear: none;
 
-  /* === BOX MODEL === */
+  /* === Box model === */
   /** box */
   display: grid;
   box-sizing: content-box;
@@ -128,7 +128,7 @@
   border-spacing: 0;
   box-shadow: none;
 
-  /* === GRID and FLEX === */
+  /* === Grid & Flex === */
   /* grid */
   grid-area: auto;
   grid-template: auto;
@@ -169,7 +169,7 @@
   row-gap: 0;
   vertical-align: auto;
 
-  /* === OVERFLOW and SCROLLING === */
+  /* === Overflow & Scroll === */
   /* overflow */
   overflow: visible;
   overflow-x: visible;
@@ -212,7 +212,7 @@
   overscroll-behavior-inline: auto;
   overscroll-behavior-block: auto;
 
-  /* === LAYOUT === */
+  /* === Layout === */
   /* table */
   table-layout: auto;
   caption-side: top;
@@ -246,7 +246,7 @@
   contain-intrinsic-inline-size: auto;
   contain-intrinsic-block-size: auto;
 
-  /* === TYPOGRAPHY === */
+  /* === Typography === */
   /* font  */
   font:
     1em/1.5 Arial,
@@ -321,7 +321,7 @@
   ruby-position: after;
   writing-mode: horizontal-tb;
 
-  /* === APPEARANCE === */
+  /* === Appearance === */
   /* visibility */
   opacity: 0;
   visibility: visible;
@@ -394,7 +394,7 @@
   /* svg */
   paint-order: fill;
 
-  /* === INTERACTION === */
+  /* === Transform & Animation === */
   /* transform */
   translate: 0;
   rotate: 0deg;
@@ -449,7 +449,7 @@
   offset-position: 0;
   offset-rotate: auto;
 
-  /* === OTHERS === */
+  /* === Misc === */
   /* action */
   cursor: pointer;
   user-select: auto;
@@ -470,7 +470,7 @@
   page-break-after: auto;
   print-color-adjust: economy;
 
-  /* === MISCELLANEOUS === */
+  /* === Others === */
   appearance: none;
   box-decoration-break: clone;
   forced-color-adjust: auto;

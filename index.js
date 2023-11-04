@@ -20,8 +20,8 @@ function order() {
 		layout(),
 		typography(),
 		appearance(),
-		interaction(),
-		others(),
+		transform_animation(),
+		misc(),
 	].flat()
 }
 
@@ -331,7 +331,7 @@ function appearance() {
 	]
 }
 
-function interaction() {
+function transform_animation() {
 	return [
 		// transform
 		'translate',
@@ -389,7 +389,7 @@ function interaction() {
 	]
 }
 
-function others() {
+function misc() {
 	return [
 		// action
 		'cursor',
