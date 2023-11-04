@@ -13,14 +13,13 @@ StyleLint config that prettifies CSS property order with [stylelint-order](https
 This config sorts properties based on the following group:
 
 1. **Position** - e.g., `top`, `right`, `inset`, `z-index`, `float`
-2. **Box model** - e.g., `display`, `width`, `height`, `margin`, `padding`, `border`
-3. **Grid & Flex** - e.g., `grid`, `flex`, `align-content`, `place-content`, `justify-content`
-4. **Overflow & Scroll** - e.g., `overflow`, `scroll-behavior`
-5. **Layout** - e.g., `table-layout`, `columns`, `container`, `contain`
-6. **Typography** - e.g., `font`, `text-align`, `white-space`
-7. **Appearance** - e.g., `opacity`, `color`, `background`, `outline`, `filter`
-8. **Interaction** - e.g., `translate`, `animation`, `transition`
-9. **Others** - e.g., `cursor`, `content`
+1. **Layout** - e.g., `display`, `width`, `height`, `margin`, `padding`, `border`, `grid`, `flex`,
+1. **Render** - e.g., `content-visibility`, `contain`
+1. **Overflow & Scroll** - e.g., `overflow`, `scroll-behavior`
+1. **Typography** - e.g., `font`, `text-align`, `white-space`
+1. **Appearance** - e.g., `opacity`, `color`, `background`, `outline`, `filter`
+1. **Transform & Animation** - e.g., `translate`, `animation`, `transition`
+1. **Misc** - e.g., `cursor`, `content`
 
 To check the complete property order, see [test.css](/test/test.css).
 
