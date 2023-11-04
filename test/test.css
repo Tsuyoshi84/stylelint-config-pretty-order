@@ -408,6 +408,10 @@
   animation-iteration-count: 1;
   animation-name: none;
   animation-play-state: running;
+  animation-range: normal;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  animation-timeline: none;
   animation-timing-function: ease;
   timeline-scope: none;
 
@@ -417,13 +421,15 @@
   transition-duration: 0.3s;
   transition-property: all;
   transition-timing-function: ease;
+
+  /* view transition */
   view-transition-name: 0;
+
+  /* timeline */
   view-timeline: none;
   view-timeline-name: none;
   view-timeline-axis: 0;
   view-timeline-inset: 0;
-
-  /* scroll timeline */
   scroll-timeline: auto;
   scroll-timeline-name: test;
   scroll-timeline-axis: inline;
