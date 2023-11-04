@@ -14,10 +14,9 @@ function order() {
 	return [
 		'all',
 		position(),
-		box_model(),
-		grid_flex(),
-		overflow_scroll(),
 		layout(),
+		render(),
+		overflow_scroll(),
 		typography(),
 		appearance(),
 		transform_animation(),
@@ -41,11 +40,16 @@ function position() {
 	].flat()
 }
 
-function box_model() {
+function layout() {
 	return [
 		// box
 		'display',
 		'box-sizing',
+
+		// container
+		'container',
+		'container-name',
+		'container-type',
 
 		// size
 		['width', 'height', 'inline-size', 'block-size'].flatMap(min_max),
@@ -78,11 +82,7 @@ function box_model() {
 		'border-image-width',
 		'border-spacing',
 		'box-shadow',
-	].flat()
-}
 
-function grid_flex() {
-	return [
 		// grid
 		'grid',
 		'grid-area',
@@ -113,29 +113,7 @@ function grid_flex() {
 		'column-gap',
 		'row-gap',
 		'vertical-align',
-	].flat()
-}
 
-function overflow_scroll() {
-	return [
-		// overflow
-		x_y_inline_block('overflow'),
-		'overflow-anchor',
-		'overflow-clip-margin',
-
-		// scroll
-		'scroll-behavior',
-		all_sizes('scroll-margin'),
-		all_sizes('scroll-padding'),
-		'scroll-snap-align',
-		'scroll-snap-stop',
-		'scroll-snap-type',
-		x_y_inline_block('overscroll-behavior'),
-	].flat()
-}
-
-function layout() {
-	return [
 		// table
 		'table-layout',
 		'caption-side',
@@ -155,11 +133,13 @@ function layout() {
 		'column-width',
 		'orphans',
 		'widows',
+	].flat()
+}
 
-		// container
-		'container',
-		'container-name',
-		'container-type',
+function render() {
+	return [
+		// content visibility
+		'content-visibility',
 
 		// contain
 		'contain',
@@ -169,6 +149,24 @@ function layout() {
 		'contain-intrinsic-inline-size',
 		'contain-intrinsic-block-size',
 	]
+}
+
+function overflow_scroll() {
+	return [
+		// overflow
+		x_y_inline_block('overflow'),
+		'overflow-anchor',
+		'overflow-clip-margin',
+
+		// scroll
+		'scroll-behavior',
+		all_sizes('scroll-margin'),
+		all_sizes('scroll-padding'),
+		'scroll-snap-align',
+		'scroll-snap-stop',
+		'scroll-snap-type',
+		x_y_inline_block('overscroll-behavior'),
+	].flat()
 }
 
 function typography() {
@@ -260,7 +258,6 @@ function appearance() {
 		// visibility
 		'opacity',
 		'visibility',
-		'content-visibility',
 		'backface-visibility',
 
 		// color
