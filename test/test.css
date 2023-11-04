@@ -273,6 +273,13 @@
   letter-spacing: 0;
   line-height: 0;
 
+  /* @font-face */
+  src: url('test.woff2') format('woff2');
+  ascent-override: auto;
+  descent-override: auto;
+  line-gap-override: normal;
+  unicode-range: none;
+
   /* text */
   text-align: 0;
   text-align-last: auto;

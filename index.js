@@ -199,6 +199,13 @@ function typography() {
 		'letter-spacing',
 		'line-height',
 
+		// @font-face
+		'src',
+		'ascent-override',
+		'descent-override',
+		'line-gap-override',
+		'unicode-range',
+
 		// text
 		'text-align',
 		'text-align-last',
