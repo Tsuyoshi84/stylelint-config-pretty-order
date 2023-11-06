@@ -422,7 +422,6 @@
   animation-range-end: normal;
   animation-timeline: none;
   animation-timing-function: ease;
-  timeline-scope: none;
 
   /* transition */
   transition: all 0.3s ease;
@@ -442,6 +441,7 @@
   scroll-timeline: auto;
   scroll-timeline-name: test;
   scroll-timeline-axis: inline;
+  timeline-scope: none;
 
   /* offset */
   offset: unset;
