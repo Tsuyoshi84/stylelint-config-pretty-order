@@ -355,7 +355,6 @@ function transform_animation() {
 		'animation-range-end',
 		'animation-timeline',
 		'animation-timing-function',
-		'timeline-scope',
 
 		// transition
 		'transition',
@@ -375,6 +374,7 @@ function transform_animation() {
 		'scroll-timeline',
 		'scroll-timeline-name',
 		'scroll-timeline-axis',
+		'timeline-scope',
 
 		// offset
 		'offset',
