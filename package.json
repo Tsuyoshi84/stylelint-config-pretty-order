@@ -2,6 +2,9 @@
   "name": "stylelint-config-pretty-order",
   "version": "0.4.0",
   "description": "Prettify CSS property order",
+  "engines": {
+    "node": ">=18"
+  },
   "main": "index.js",
   "scripts": {
     "lint": "biome check index.js",
