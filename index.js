@@ -81,7 +81,6 @@ function layout() {
 		'border-image-source',
 		'border-image-width',
 		'border-spacing',
-		'box-shadow',
 
 		// grid
 		'grid',
@@ -279,6 +278,7 @@ function appearance() {
 		'background-position-y',
 		'background-repeat',
 		'background-size',
+		'box-shadow',
 		'mix-blend-mode',
 
 		// image
