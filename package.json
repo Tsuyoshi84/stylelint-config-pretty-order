@@ -10,7 +10,8 @@
     "lint": "biome check index.js",
     "stylelint": "stylelint --max-warnings 0 ./test/test.css",
     "format": "biome format --write index.js",
-    "format:check": "biome format index.js"
+    "format:check": "biome format index.js",
+    "test": "stylelint --config ./index.js --max-warnings 0 ./test/test.css"
   },
   "keywords": [
     "stylelint",
