@@ -123,7 +123,6 @@ function layout() {
 		'columns',
 		'column-count',
 		'column-fill',
-		'column-gap',
 		'column-rule',
 		'column-rule-color',
 		'column-rule-style',
@@ -227,7 +226,6 @@ function typography() {
 		'text-emphasis-position',
 		'text-emphasis-style',
 		'text-orientation',
-		'text-overflow',
 
 		// white space & word wrapping
 		'white-space',
