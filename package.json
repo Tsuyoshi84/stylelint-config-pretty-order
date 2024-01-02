@@ -13,8 +13,15 @@
   "engines": {
     "node": ">=18"
   },
-  "main": "index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
   "scripts": {
+    "build": "rollup -c rollup.config.js",
     "lint": "biome check index.js",
     "stylelint": "stylelint --max-warnings 0 ./test/test.css",
     "format": "biome format --write index.js",
@@ -23,10 +30,11 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
-    "stylelint": "^15.11.0"
+    "rollup": "^4.9.2",
+    "stylelint": "^16.1.0"
   },
   "peerDependencies": {
-    "stylelint": ">=15"
+    "stylelint": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
     "stylelint-order": "^6.0.3"
