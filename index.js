@@ -1,6 +1,6 @@
 // @ts-check
 
-module.exports = {
+export default {
 	plugins: 'stylelint-order',
 	rules: {
 		'order/properties-order': [order(), { unspecified: 'bottomAlphabetical', severity: 'warning' }],
