@@ -40,19 +40,19 @@ and so on.
 Install [stylelint](https://github.com/stylelint/stylelint) and this package according to the package manager:
 
 ```bash
-npm i -D stylelint-config-pretty-order
+npm i -D stylelint stylelint-config-pretty-order
 ```
 
 ```bash
-yarn add --dev stylelint-config-pretty-order
+yarn add --dev stylelint stylelint-config-pretty-order
 ```
 
 ```bash
-pnpm add -D stylelint-config-pretty-order
+pnpm add -D stylelint stylelint-config-pretty-order
 ```
 
 ```bash
-bun add -D stylelint-config-pretty-order
+bun add -D stylelint stylelint-config-pretty-order
 ```
 
 ## Usage
