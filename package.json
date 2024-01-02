@@ -25,11 +25,10 @@
   ],
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "lint": "biome check index.js",
+    "lint": "biome check src",
     "stylelint": "stylelint --max-warnings 0 ./test/test.css",
-    "format": "biome format --write index.js",
-    "format:check": "biome format index.js",
-    "test": "stylelint --config ./index.js --max-warnings 0 ./test/test.css"
+    "format": "biome format --write src",
+    "format:check": "biome format src"
   },
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
