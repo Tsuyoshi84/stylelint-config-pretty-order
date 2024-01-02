@@ -28,3 +28,4 @@ jobs:
       - run: bun format:check
       - run: bun stylelint
       - run: bun run build
+      - run: bun test
