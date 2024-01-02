@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * Returns an array of property names with the following suffixes:
  * - top
