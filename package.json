@@ -2,6 +2,14 @@
   "name": "stylelint-config-pretty-order",
   "version": "0.4.1",
   "description": "Prettify CSS property order",
+  "author": "Tsuyoshi Yamaguchi",
+  "license": "MIT",
+  "repository": "git@github.com:Tsuyoshi84/stylelint-config-pretty-order.git",
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-order"
+  ],
   "engines": {
     "node": ">=18"
   },
@@ -13,14 +21,6 @@
     "format:check": "biome format index.js",
     "test": "stylelint --config ./index.js --max-warnings 0 ./test/test.css"
   },
-  "keywords": [
-    "stylelint",
-    "stylelint-config",
-    "stylelint-order"
-  ],
-  "repository": "git@github.com:Tsuyoshi84/stylelint-config-pretty-order.git",
-  "author": "Tsuyoshi Yamaguchi",
-  "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
     "stylelint": "^15.11.0"
