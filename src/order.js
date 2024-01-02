@@ -9,7 +9,7 @@ import {
 	start_end,
 	top_right_bottom_left,
 	x_y_inline_block,
-} from './util'
+} from './util.js'
 
 /**
  * @returns {string[]} Array of property names

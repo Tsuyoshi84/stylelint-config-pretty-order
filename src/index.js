@@ -1,5 +1,5 @@
 // @ts-check
-import { order } from './order'
+import { order } from './order.js'
 
 export default {
 	plugins: 'stylelint-order',
