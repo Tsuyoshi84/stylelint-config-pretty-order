@@ -169,6 +169,7 @@
   justify-items: auto;
   justify-self: auto;
   gap: 0;
+  column-gap: normal;
   row-gap: 0;
   vertical-align: auto;
 
@@ -182,7 +183,6 @@
   columns: unset;
   column-count: auto;
   column-fill: balance;
-  column-gap: normal;
   column-rule: medium none currentColor;
   column-rule-color: currentColor;
   column-rule-style: none;
@@ -295,12 +295,12 @@
   text-indent: 0;
   text-justify: 0;
   text-shadow: none;
+  text-overflow: clip;
   text-rendering: auto;
   text-size-adjust: auto;
   text-transform: none;
   text-underline-offset: auto;
   text-underline-position: auto;
-  text-overflow: clip;
 
   /* white space & word wrapping */
   white-space: normal;
