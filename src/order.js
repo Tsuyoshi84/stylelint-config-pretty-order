@@ -79,11 +79,11 @@ function layout() {
 		'border-end-end-radius',
 		'border-end-start-radius',
 		'border-image',
+		'border-image-source',
+		'border-image-slice',
+		'border-image-width',
 		'border-image-outset',
 		'border-image-repeat',
-		'border-image-slice',
-		'border-image-source',
-		'border-image-width',
 		'border-spacing',
 
 		// grid

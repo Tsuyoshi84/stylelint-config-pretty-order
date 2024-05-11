@@ -125,11 +125,11 @@
   border-end-end-radius: 1px;
   border-end-start-radius: 1px;
   border-image: none;
+  border-image-source: none;
+  border-image-slice: 100%;
+  border-image-width: 1;
   border-image-outset: 0;
   border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
   border-spacing: 0;
 
   /* grid */
