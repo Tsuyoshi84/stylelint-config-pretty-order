@@ -38,6 +38,13 @@ function position() {
 		'inset',
 		inline_block('inset').flatMap(start_end),
 
+		// anchor
+		'anchor-name',
+		'position-anchor',
+		'position-try-options',
+		'position-visibility',
+		'inset-area',
+
 		// flow control
 		'float',
 		'clear',

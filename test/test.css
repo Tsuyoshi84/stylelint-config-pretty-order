@@ -18,6 +18,13 @@
   inset-block-start: 0;
   inset-block-end: 0;
 
+  /* anchor */
+  anchor-name: --test;
+  position-anchor: --test;
+  position-try-options: flip-block;
+  position-visibility: anchors-visible;
+  inset-area: bottom;
+
   /* flow control */
   float: none;
   clear: none;
