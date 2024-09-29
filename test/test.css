@@ -429,6 +429,7 @@
   animation-range-end: normal;
   animation-timeline: none;
   animation-timing-function: ease;
+  interpolate-size: numeric-only;
 
   /* transition */
   transition: all 0.3s ease;
