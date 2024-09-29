@@ -364,6 +364,7 @@ function transform_animation() {
 		'animation-range-end',
 		'animation-timeline',
 		'animation-timing-function',
+		'interpolate-size',
 
 		// transition
 		'transition',
