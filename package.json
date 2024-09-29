@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-pretty-order",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Prettify CSS property order",
   "author": "Tsuyoshi Yamaguchi",
   "license": "MIT",
