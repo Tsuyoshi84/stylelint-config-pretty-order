@@ -1,0 +1,22 @@
+{
+  "LABEL": {
+    "name": ""
+  },
+  "CHECKS": {
+    "prefixes": [
+      "fix: ",
+      "feat: ",
+      "docs: ",
+      "refactor: ",
+      "test: ",
+      "chore: "
+    ],
+    "regexp": "docs\\(v[0-9]\\): ",
+    "regexpFlags": "i"
+  },
+  "MESSAGES": {
+    "success": "PR title format is correct",
+    "failure": "PR title format is incorrect, check .github/pr-title-checker-config.json for format requirements",
+    "notice": ""
+  }
+}
