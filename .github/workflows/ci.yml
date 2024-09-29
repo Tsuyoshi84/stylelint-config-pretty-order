@@ -19,7 +19,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
@@ -29,3 +28,12 @@ jobs:
       - run: bun stylelint
       - run: bun run build
       - run: bun test
+
+  check-title:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: thehanimo/pr-title-checker@v1.4.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pass_on_octokit_error: false
+          configuration_path: .github/pr-title-checker-config.json
